@@ -152,7 +152,7 @@ namespace BarberShop.Windows
             {
                 textBox.Text = new string
                 (
-                    textBox.Text.Where(ch =>(ch >= 'а' && ch <= 'я') || (ch >= 'А' && ch <= 'Я') || ch == 'ё' || ch == 'Ё' || (ch >= 'A' && ch<= 'Z') || (ch >= 'a' && ch <= 'z')).ToArray()
+                    textBox.Text.Where(ch => ch == '-' ||(ch >= 'а' && ch <= 'я') || (ch >= 'А' && ch <= 'Я') || ch == 'ё' || ch == 'Ё' || (ch >= 'A' && ch<= 'Z') || (ch >= 'a' && ch <= 'z')).ToArray()
                 );
             }
         }
