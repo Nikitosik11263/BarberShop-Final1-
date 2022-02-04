@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0831eda0ca5b4db19596d1b9b83cf88b" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="BarbyShopModel.Client" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="BarbyShopModel.Employee" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="BarbyShopModel.Gender" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="BarbyShopModel.Order" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="BarbyShopModel.Service" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="BarbyShopModel.Specialization" Width="1.5" PointX="0.75" PointY="7.625" />
+        <EntityTypeShape EntityType="BarbyShopModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" />
+        <AssociationConnector Association="BarbyShopModel.FK_Client_Gender" />
+        <AssociationConnector Association="BarbyShopModel.FK_Order_Client" />
+        <AssociationConnector Association="BarbyShopModel.FK_Employee_Specialization" />
+        <AssociationConnector Association="BarbyShopModel.FK_Order_Employee" />
+        <AssociationConnector Association="BarbyShopModel.FK_Order_Service" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
