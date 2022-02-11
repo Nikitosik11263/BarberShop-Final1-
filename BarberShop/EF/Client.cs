@@ -25,7 +25,7 @@ namespace BarberShop.EF
         public string FName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public int IDGendr { get; set; }
+        public Nullable<int> IDGendr { get; set; }
     
         public virtual Gender Gender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

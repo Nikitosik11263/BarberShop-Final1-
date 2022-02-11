@@ -116,6 +116,9 @@
     <Compile Include="Windows\PersonalWindow.xaml.cs">
       <DependentUpon>PersonalWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\RecordServiceWindow1.xaml.cs">
+      <DependentUpon>RecordServiceWindow1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RecordWindow.xaml.cs">
       <DependentUpon>RecordWindow.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\PersonalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RecordServiceWindow1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

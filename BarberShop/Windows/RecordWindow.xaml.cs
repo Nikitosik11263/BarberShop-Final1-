@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static BarberShop.ClassEntities;
+using BarberShop.EF;
 
 namespace BarberShop.Windows
 {
@@ -22,6 +24,8 @@ namespace BarberShop.Windows
         public RecordWindow()
         {
             InitializeComponent();
+            AllClient.ItemsSource = context.Client.ToList();
+
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
@@ -33,6 +37,19 @@ namespace BarberShop.Windows
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            RecordServiceWindow1 newRecordServiceWindow1 = new RecordServiceWindow1();
+            newRecordServiceWindow1.ShowDialog();
+            this.Close();
+        }
+
+        private void AllPersonal_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -14,7 +14,7 @@
           <Property Name="FName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="20" />
-          <Property Name="IDGendr" Type="int" Nullable="false" />
+          <Property Name="IDGendr" Type="int" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -78,7 +78,7 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Client_Gender">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Gender">
@@ -280,7 +280,7 @@
           <Property Name="FName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="IDGendr" Type="Int32" Nullable="false" />
+          <Property Name="IDGendr" Type="Int32" />
           <NavigationProperty Name="Gender" Relationship="BarbyShopModel.FK_Client_Gender" FromRole="Client" ToRole="Gender" />
           <NavigationProperty Name="Order" Relationship="BarbyShopModel.FK_Order_Client" FromRole="Client" ToRole="Order" />
         </EntityType>
@@ -354,7 +354,7 @@
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Client_Gender">
-          <End Type="BarbyShopModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="BarbyShopModel.Gender" Role="Gender" Multiplicity="0..1" />
           <End Type="BarbyShopModel.Client" Role="Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Gender">

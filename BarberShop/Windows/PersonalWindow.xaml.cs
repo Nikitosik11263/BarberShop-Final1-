@@ -18,6 +18,14 @@ namespace BarberShop.Windows
     /// <summary>
     /// Логика взаимодействия для PersonalWindow.xaml
     /// </summary>
+    /// 
+
+  //  List<string> ListForSort = new List<string>()
+  // {
+  //   "По умолчанию",
+  // "По Фамилии",
+  //"По Имени"
+  //};
     public partial class PersonalWindow : Window
     {
         public PersonalWindow()

@@ -78,7 +78,7 @@
                 Grid.Row="2"
                 HorizontalAlignment="Left"
                 x:Name="Record"
-                Content="Запись на услуг"
+                Content="Запись на услуги"
                 FontSize="40"
                 Height="100"
                 Margin="10" Click="Record_Click" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"

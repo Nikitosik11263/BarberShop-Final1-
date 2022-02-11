@@ -10,7 +10,7 @@
         Title="PersonalWindow" Height="1080" Width="1920">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -23,8 +23,8 @@
                 Text="Информация о персонале"
                 FontSize="70"
                 TextAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="80" 
+                VerticalAlignment="Top"
+                Margin="30" 
                 Foreground="White"
                 />
         <Button
@@ -41,18 +41,12 @@
                     <ImageBrush ImageSource="/Images/cross.png"/>
                 </Button.Background>
             </Button>
-            <TextBlock
-                Text="Информация о персонале"
-                FontSize="70"
-                TextAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="60" Foreground="White"
-                />
+           
             <DataGrid
             x:Name="AllPersonal"
             Grid.Row="1"
             AutoGenerateColumns="False"
-            
+            Margin="10 100 10 0"
             >
                 <DataGrid.Background>
                     <SolidColorBrush Color="#FFF0F0F0" Opacity="0"/>
@@ -98,5 +92,35 @@
             HorizontalAlignment="Left"
             Margin="15" Click="Plus_Click"
             />
+        
+        <WrapPanel 
+                Grid.Row="0"
+                Margin="40 150 200 0"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+            
+                >
+            <TextBox
+                x:Name="txtSearch"
+                FontSize="40"
+                Width="200"
+                Margin="20 0 40 0"
+                Background="{x:Null}"
+                Foreground="#FFA28A60"
+                BorderBrush="White" 
+                FontFamily="Rockwell Condensed"
+                />
+            <ComboBox
+                x:Name="cmbSort"
+                FontSize="40"
+                Width="250"
+                Margin="5 0"
+                Background="{x:Null}"
+                Foreground="#FFA28A60"
+                BorderBrush="White"
+                FontFamily="Rockwell Condensed"
+                
+                />
+        </WrapPanel>
     </Grid>
 </Window>

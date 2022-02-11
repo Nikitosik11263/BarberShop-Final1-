@@ -9,8 +9,25 @@
         WindowState="Maximized"
         Title="RecordWindow" Height="1080" Width="1920">
     <Grid>
-        <StackPanel>
-            <Button
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Images/1212.png" 
+               Stretch="Fill" 
+               Grid.RowSpan="3"
+            />
+        <TextBlock
+            Grid.Row="0"
+                Text="Запись на услугу"
+                FontSize="70"
+                TextAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="30" 
+                Foreground="White"
+                />
+        <Button
                 x:Name="Close"
                 Height="50"
                 Width="50"
@@ -18,30 +35,89 @@
                 HorizontalAlignment="Right"
                 Margin="20" Click="Close_Click" 
                 BorderBrush="{x:Null}" 
-                Foreground="{x:Null}"  
+                Foreground="{x:Null}"
                 >
-                <Button.Background>
-                    <ImageBrush ImageSource="/Images/cross.png"/>
-                </Button.Background>
-            </Button>
-            <TextBlock
-                Text="Запись"
-                FontSize="70"
-                TextAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="10"
-                />
-            <Button
-                x:Name="Exit" 
-                Content="Выйти"
-                FontSize="35" 
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/cross.png"/>
+            </Button.Background>
+        </Button>
+
+        <DataGrid
+            x:Name="AllClient"
+            Grid.Row="1"
+            AutoGenerateColumns="False"
+            Margin="10 100 10 0"
+            >
+            <DataGrid.Background>
+                <SolidColorBrush Color="#FFF0F0F0" 
+                                 Opacity="0"/>
+            </DataGrid.Background>
+
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding FName}" />
+                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding LName}"/>
+                <DataGridTextColumn Header="Почта" Width="*" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Телефон" Width="*" Binding="{Binding Phone}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+                Grid.Row="2"
+                x:Name="ExitServ"
+                Content="EXIT"
                 Height="70"
                 Width="200"
-                Margin="50"
-                VerticalAlignment="Top"
-                Click="Exit_Click"
+                FontSize="40" 
+                Margin="15"                
+                HorizontalAlignment="Right"
+                Click="Exit_Click" 
+                Background="{x:Null}" 
+                Foreground="#FFA27432" 
+                BorderBrush="White" 
+                OpacityMask="Black"    
+                FontFamily="Rockwell Condensed"
                 />
+        <Button
+            x:Name="PlusServ"
+            Content="ADD"
+            FontSize="40"
+            Width="200"
+            Height="70" 
+            Grid.Row="2" 
+            FontFamily="Rockwell Condensed" 
+            Background="{x:Null}" 
+            BorderBrush="White" 
+            Foreground="#FFA28A60"
+            HorizontalAlignment="Left"
+            Margin="15" Click="Plus_Click"
+            />
 
-        </StackPanel>
+        <WrapPanel 
+                Grid.Row="0"
+                Margin="40 150 200 0"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+            
+                >
+            <TextBox
+                x:Name="txtSearchServ"
+                FontSize="40"
+                Width="200"
+                Margin="20 0 40 0"
+                Background="{x:Null}"
+                Foreground="#FFA28A60"
+                BorderBrush="White" 
+                FontFamily="Rockwell Condensed"
+                />
+            <ComboBox
+                x:Name="cmbSortServ"
+                FontSize="40"
+                Width="250"
+                Margin="5 0"
+                Background="{x:Null}"
+                Foreground="#FFA28A60"
+                BorderBrush="White"
+                FontFamily="Rockwell Condensed"
+                />
+        </WrapPanel>
     </Grid>
 </Window>
