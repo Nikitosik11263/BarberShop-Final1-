@@ -21,7 +21,7 @@
         <TextBlock
             Grid.Row="0"
                 Text="Запись на услугу"
-                FontSize="70"
+                FontSize="71"
                 TextAlignment="Center"
                 VerticalAlignment="Top"
                 Margin="30" 
