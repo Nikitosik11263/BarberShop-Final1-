@@ -29,8 +29,8 @@
                 />
         <Button
                 x:Name="Close"
-                Height="50"
-                Width="50"
+                Height="51"
+                Width="51"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 Margin="20" Click="Close_Click" 
