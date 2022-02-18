@@ -43,10 +43,11 @@
             </Button>
            
             <DataGrid
-            x:Name="AllPersonal"
+            x:Name="AllPersonalTwo"
             Grid.Row="1"
             AutoGenerateColumns="False"
             Margin="10 100 10 0"
+            KeyUp="AllPersonal_KeyUp"
             >
                 <DataGrid.Background>
                     <SolidColorBrush Color="#FFF0F0F0" Opacity="0"/>
@@ -102,24 +103,25 @@
                 >
             <TextBox
                 x:Name="txtSearch"
-                FontSize="40"
+                FontSize="20"
                 Width="200"
                 Margin="20 0 40 0"
                 Background="{x:Null}"
                 Foreground="#FFA28A60"
                 BorderBrush="White" 
                 FontFamily="Rockwell Condensed"
+                TextChanged="txtSearch_TextChanged"
                 />
             <ComboBox
                 x:Name="cmbSort"
-                FontSize="40"
+                FontSize="20"
                 Width="250"
                 Margin="5 0"
                 Background="{x:Null}"
                 Foreground="#FFA28A60"
                 BorderBrush="White"
                 FontFamily="Rockwell Condensed"
-                
+                SelectionChanged="cmbSort_SelectionChanged"
                 />
         </WrapPanel>
     </Grid>

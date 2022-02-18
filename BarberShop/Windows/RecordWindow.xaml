@@ -47,6 +47,7 @@
             Grid.Row="1"
             AutoGenerateColumns="False"
             Margin="10 100 10 0"
+            KeyUp="AllClient_KeyUp"
             >
             <DataGrid.Background>
                 <SolidColorBrush Color="#FFF0F0F0" 
@@ -96,27 +97,29 @@
                 Margin="40 150 200 0"
                 VerticalAlignment="Center"
                 Background="{x:Null}"
-            
+                
                 >
             <TextBox
                 x:Name="txtSearchServ"
-                FontSize="40"
+                FontSize="20"
                 Width="200"
                 Margin="20 0 40 0"
                 Background="{x:Null}"
                 Foreground="#FFA28A60"
                 BorderBrush="White" 
                 FontFamily="Rockwell Condensed"
+                TextChanged="txtSearchServ_TextChanged"
                 />
             <ComboBox
                 x:Name="cmbSortServ"
-                FontSize="40"
+                FontSize="20"
                 Width="250"
                 Margin="5 0"
                 Background="{x:Null}"
                 Foreground="#FFA28A60"
                 BorderBrush="White"
                 FontFamily="Rockwell Condensed"
+                SelectionChanged="cmbSortServ_SelectionChanged"
                 />
         </WrapPanel>
     </Grid>

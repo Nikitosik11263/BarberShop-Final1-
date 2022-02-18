@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static BarberShop.ClassEntities;
 using BarberShop.EF;
+using BarberShop.Windows;
 
 namespace BarberShop.Windows
 {
@@ -21,10 +22,59 @@ namespace BarberShop.Windows
     /// </summary>
     public partial class RecordWindow : Window
     {
+        List<EF.Employee> listEmployee = new List<EF.Employee>();
+
+        List<string> listForSort = new List<string>()
+                {
+                "По умолчанию",
+                "По фамилии",
+                "По имени",
+                "По отчеству",
+                };
         public RecordWindow()
         {
             InitializeComponent();
             AllClient.ItemsSource = context.Client.ToList();
+            cmbSortServ.ItemsSource = listForSort;
+            cmbSortServ.SelectedIndex = 0;
+            Filter();
+        }
+
+        private void Filter()
+        {
+            listEmployee = ClassEntities.context.Employee.ToList();
+            listEmployee = listEmployee.
+            Where(i => i.LName.Contains(txtSearchServ.Text)
+            || i.FName.Contains(txtSearchServ.Text)
+            || i.MName.Contains(txtSearchServ.Text)).ToList();
+
+            switch (cmbSortServ.SelectedIndex)
+            {
+                case 0:
+                    listEmployee = listEmployee.OrderBy(i => i.ID).ToList();
+                    break;
+
+                case 1:
+                    listEmployee = listEmployee.OrderBy(i => i.LName).ToList();
+                    break;
+
+                case 2:
+                    listEmployee = listEmployee.OrderBy(i => i.FName).ToList();
+                    break;
+
+                case 3:
+                    listEmployee = listEmployee.OrderBy(i => i.MName).ToList();
+                    break;
+
+                default:
+                    listEmployee = listEmployee.OrderBy(i => i.ID).ToList();
+                    break;
+            }
+            if (listEmployee.Count == 0)
+            {
+                MessageBox.Show("Записей нет");
+            }
+            AllClient.ItemsSource = listEmployee;
 
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -47,9 +97,48 @@ namespace BarberShop.Windows
             this.Close();
         }
 
-        private void AllPersonal_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void AllClient_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Delete)
+            {
+                var resClick = MessageBox.Show("Вы уверены?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+                try
+                {
+
+                    if (resClick == MessageBoxResult.Yes)
+                    {
+                        EF.Employee userDel = new EF.Employee();
+
+                        if (!(AllClient.SelectedItem is EF.Employee))
+                        {
+                            MessageBox.Show("Запись не выбрана");
+                            return;
+                        }
+
+                        userDel = (AllClient.SelectedItem as EF.Employee);
+
+                        //MessageBox.Show(userDel.LName);
+                        ClassEntities.context.Employee.Remove(userDel);
+                        ClassEntities.context.SaveChanges();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        private void cmbSortServ_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
+        }
+
+        private void txtSearchServ_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Filter();
         }
     }
 }
