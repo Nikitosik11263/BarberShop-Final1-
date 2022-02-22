@@ -20,7 +20,7 @@
             />
         <TextBlock
             Grid.Row="0"
-                Text="Запись на услугу"
+                Text="Информация о клиенте"
                 FontSize="71"
                 TextAlignment="Center"
                 VerticalAlignment="Top"
@@ -87,7 +87,7 @@
             FontFamily="Rockwell Condensed" 
             Background="{x:Null}" 
             BorderBrush="White" 
-            Foreground="#FFA28A60"
+            Foreground="#FFA27432"
             HorizontalAlignment="Left"
             Margin="15" Click="Plus_Click"
             />
