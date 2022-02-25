@@ -151,7 +151,7 @@
                                 <Image.Source>
                                     <Binding Path="Photo">
                                         <Binding.TargetNullValue>
-                                            <ImageSource>/BarberShop;component/Images/Man.png.png</ImageSource>
+                                            <ImageSource>/BarberShop;component/Images/Man.png</ImageSource>
                                         </Binding.TargetNullValue>
                                     </Binding>
                                 </Image.Source>
