@@ -42,29 +42,7 @@
                 </Button.Background>
             </Button>
            
-            <DataGrid
-            x:Name="AllPersonalTwo"
-            Grid.Row="1"
-            AutoGenerateColumns="False"
-            Margin="10 100 10 0"
-            KeyUp="AllPersonal_KeyUp"
-            >
-                <DataGrid.Background>
-                    <SolidColorBrush Color="#FFF0F0F0" Opacity="0"/>
-                </DataGrid.Background>
-
-                <DataGrid.Columns >
-                    <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding FName}"/>
-                    <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding LName}"/>
-                    <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding MName}"/>
-                    <DataGridTextColumn Header="Почта" Width="*" Binding="{Binding Email}"/>
-                    <DataGridTextColumn Header="Серия паспорта" Width="*" Binding="{Binding PassSeries}"/>
-                    <DataGridTextColumn Header="Номер паспорта" Width="*" Binding="{Binding PassNum}"/>
-                    <DataGridTextColumn Header="Телефон" Width="*" Binding="{Binding Phone}"/>
-                    <DataGridTextColumn Header="Логин" Width="*" Binding="{Binding Login}"/>
-                    <DataGridTextColumn Header="Пароль" Width="0.5*" Binding="{Binding Password}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+           
         <Button
                 Grid.Row="2"
                 x:Name="Exit"
@@ -124,5 +102,171 @@
                 SelectionChanged="cmbSort_SelectionChanged"
                 />
         </WrapPanel>
+
+
+
+        <ListView x:Name="AllPersonalTwo"
+                  Grid.Row="1"
+                  KeyUp="AllPersonal_KeyUp"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                  BorderBrush="#FFAA9264" 
+                  Background="#FF0F0F0F" Foreground="Black"
+                  >
+            
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border 
+                        
+                BorderBrush="#FFA28A60"
+                BorderThickness="2"
+                CornerRadius="10"
+                Width="800"
+                Height="100"
+                Margin="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Column="0"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="3"
+                                   Width="100"
+                                   Height="100">
+                                <Image.Source>
+                                    <Binding Path="Photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/BarberShop;component/Images/Man.png.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+
+                            <!-- 1 -->
+                            <TextBlock Text="Фамилия:"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="Имя:"
+                           Grid.Column="1"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="Телефон:"
+                           Grid.Column="1"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <!-- 2 -->
+
+                            <TextBlock Text="{Binding Path = LName}"
+                           Grid.Column="2"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="{Binding Path = FName}"
+                           Grid.Column="2"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="{Binding Path = Phone}"
+                           Grid.Column="2"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <!-- 3 -->
+
+                            <TextBlock Text="Специализация"
+                            Grid.Column="3"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="Логин:"
+                           Grid.Column="3"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="Пароль:"
+                           Grid.Column="3"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <!-- 4 -->
+                        
+
+                            <TextBlock Text="{Binding Path = Login}"
+                           Grid.Column="4"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="{Binding Path = Password}"
+                           Grid.Column="4"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

@@ -31,6 +31,7 @@
           <Property Name="SpecID" Type="int" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -299,6 +300,7 @@
           <Property Name="SpecID" Type="Int32" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Specialization" Relationship="BarbyShopModel.FK_Employee_Specialization" FromRole="Employee" ToRole="Specialization" />
           <NavigationProperty Name="Order" Relationship="BarbyShopModel.FK_Order_Employee" FromRole="Employee" ToRole="Order" />
         </EntityType>
@@ -458,6 +460,7 @@
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="BarbyShopModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="SpecID" ColumnName="SpecID" />
