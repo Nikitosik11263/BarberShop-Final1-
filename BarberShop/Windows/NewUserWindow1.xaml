@@ -19,13 +19,24 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            
         </Grid.ColumnDefinitions>
-     
+
+        <Image
+            Width="180"
+            Height="170"
+            Source="/Images/9.jpg" 
+            Stretch="Fill" 
+            Grid.RowSpan="6"
+            HorizontalAlignment="Left"
+            Grid.Row="4"
+            />
+
         <TextBlock
             Grid.Row="0"
             Grid.Column="0"
@@ -34,7 +45,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"            
+            FontSize="25"            
             />
         <TextBox
             x:Name="tbFName"
@@ -44,9 +55,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -61,7 +72,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbLName"
@@ -71,9 +82,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -88,7 +99,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbMName"
@@ -98,9 +109,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -114,7 +125,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbEmail"
@@ -124,9 +135,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -140,7 +151,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbSeries"
@@ -150,9 +161,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -167,7 +178,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbNumber"
@@ -177,9 +188,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -194,7 +205,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbTelef"
@@ -204,9 +215,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -221,7 +232,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbLog"
@@ -231,9 +242,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
@@ -247,7 +258,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
         <TextBox
             x:Name="tbPass"
@@ -257,51 +268,34 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Margin="15 0 0 0"
-            FontSize="30" 
+            FontSize="20" 
             Width="360"
-            Height="35"
+            Height="26"
             BorderBrush="White" 
             Background="{x:Null}" 
             SelectionBrush="White"
             MaxLength="50"
             />
         <TextBlock
-            Grid.Row="9"
+            Grid.Row="10"
             Grid.Column="0"
-            Text="Повторите пароль:"
+            Text="Фото:"
             Foreground="Wheat"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Margin="0 0 15 0"
-            FontSize="35"
+            FontSize="25"
             />
-        <TextBox
-            x:Name="tbPassTwo"
-            Grid.Row="9"
-            Grid.Column="1"
-            Foreground="Wheat"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Margin="15 0 0 0"
-            FontSize="30" 
-            Width="360"
-            Height="35"
-            BorderBrush="White" 
-            Background="{x:Null}" 
-            SelectionBrush="White"
-            MaxLength="50"
-            />
+        
         <Button
             x:Name="btnAdd"
             Content="ADD"
             Grid.ColumnSpan="2"
-            Grid.Row="10"
+            Grid.Row="12"
             FontSize="25"
-            Height="35"
             Width="100"
             HorizontalAlignment="Center"
             VerticalAlignment="Center" Background="{x:Null}" BorderBrush="White" Foreground="#FFE6DEB3" FontFamily="Rockwell Condensed" Click="btnAdd_Click"
-            
             />
 
     </Grid>

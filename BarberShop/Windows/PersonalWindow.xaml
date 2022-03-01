@@ -110,7 +110,8 @@
                   KeyUp="AllPersonal_KeyUp"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                   BorderBrush="#FFAA9264" 
-                  Background="#FF0F0F0F" Foreground="Black"
+                  Background="#FF0F0F0F" 
+                  Foreground="Black"
                   >
             
             <ListView.ItemsPanel>
@@ -149,9 +150,9 @@
                                    Width="100"
                                    Height="100">
                                 <Image.Source>
-                                    <Binding Path="Photo">
+                                    <Binding Path="Image">
                                         <Binding.TargetNullValue>
-                                            <ImageSource>/BarberShop;component/Images/Man.png</ImageSource>
+                                            <ImageSource>/BarberShop;component/Images/Wom.jpg</ImageSource>
                                         </Binding.TargetNullValue>
                                     </Binding>
                                 </Image.Source>
@@ -216,14 +217,7 @@
 
                             <!-- 3 -->
 
-                            <TextBlock Text="Специализация"
-                            Grid.Column="3"
-                           Grid.Row="0"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Right"
-                           Margin="0 0 10 0"
-                           FontSize="20"
-                           Foreground="#FFA28A60"/>
+
 
                             <TextBlock Text="Логин:"
                            Grid.Column="3"

@@ -221,6 +221,8 @@
       <DependentUpon>BarbyShop.edmx</DependentUpon>
       <LastGenOutput>BarbyShop.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\Wom.jpg" />
+    <Resource Include="Images\9.jpg" />
     <Resource Include="Images\woman.png" />
     <Resource Include="Images\Man.png" />
     <Resource Include="Images\1212.2.png" />
