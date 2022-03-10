@@ -294,9 +294,47 @@
             Grid.Row="12"
             FontSize="25"
             Width="100"
+            Margin="2"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center" Background="{x:Null}" BorderBrush="White" Foreground="#FFE6DEB3" FontFamily="Rockwell Condensed" Click="btnAdd_Click"
+            VerticalAlignment="Center" Background="{x:Null}"
+            BorderBrush="White" 
+            Foreground="#FFE6DEB3" 
+            FontFamily="Rockwell Condensed" 
+            Click="btnAdd_Click"
             />
-
+        <Border
+            Width="90"
+            Height="90"
+            Grid.Column="1"
+            Grid.Row="9"
+            Grid.RowSpan="3"
+            x:Name="border" 
+            CornerRadius="15" 
+            SnapsToDevicePixels="true" 
+            Background="Black" 
+            BorderThickness="2"
+            BorderBrush="Wheat"
+            HorizontalAlignment="Left"
+            Margin="15 0 0 0"
+            >
+            <Image
+                x:Name="photoUser"
+                />
+        </Border>
+        <Button
+            x:Name="btnChoosePhoto"
+            Content="Add Photo"
+            Grid.ColumnSpan="2"
+            Grid.Row="10"
+            FontSize="25"
+            Width="100"
+            Margin="0 0 170 0 "
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center" Background="{x:Null}"
+            BorderBrush="White" 
+            Foreground="#FFE6DEB3" 
+            FontFamily="Rockwell Condensed" 
+            Click="btnChoosePhoto_Click_1"
+            />
     </Grid>
 </Window>

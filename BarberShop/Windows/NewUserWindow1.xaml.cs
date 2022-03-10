@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static BarberShop.ClassEntities;
 using BarberShop.EF;
+using BarberShop.Windows;
+using Microsoft.Win32;
+using System.IO;
+
 namespace BarberShop.Windows
 {
     /// <summary>
@@ -20,14 +24,25 @@ namespace BarberShop.Windows
     /// </summary>
     public partial class NewUserWindow1 : Window
     {
+
+        EF.Employee editEmployee = new EF.Employee();
+        
+        private string pathPhoto = null;
+
         public NewUserWindow1()
         {
             InitializeComponent();
+
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             Employee employee = new Employee();
+
+            if (pathPhoto != null)
+            {
+                editEmployee.Image = File.ReadAllBytes(pathPhoto);
+            }
 
             if (!string.IsNullOrWhiteSpace(tbFName.Text))
             {
@@ -189,6 +204,19 @@ namespace BarberShop.Windows
                 );
             }
 
+        }
+     
+
+        private void btnChoosePhoto_Click_1(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (openFile.ShowDialog() == true)
+            {
+                photoUser.Source = new BitmapImage(new Uri(openFile.FileName));
+                pathPhoto = openFile.FileName;
+            }
+
+            ClassEntities.context.SaveChanges();
         }
     }
 }
