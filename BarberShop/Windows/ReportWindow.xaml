@@ -7,42 +7,71 @@
         mc:Ignorable="d"
         WindowStyle="None"
         WindowState="Maximized"
-        Title="ReportWindow" Height="1080" Width="1920">
-    <Grid>
-   
-        <StackPanel>
-            <Button
-                x:Name="Close"
-                Height="50"
-                Width="50"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Right"
-                Margin="20" Click="Close_Click" 
-                BorderBrush="{x:Null}" 
-                Foreground="{x:Null}"  
-                >
-                <Button.Background>
-                    <ImageBrush ImageSource="/Images/cross.png"/>
-                </Button.Background>
-            </Button>
-            <TextBlock
-                Text="Отчет"
-                FontSize="70"
+        Title="ReportWindow" Height="450" Width="800">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image
+            Width="200"
+            Height="170"
+            Source="/Images/Babki.jpg" 
+            Stretch="Fill" 
+            Grid.RowSpan="4"
+            HorizontalAlignment="Left"
+            Grid.Row="2"
+            />
+
+        <StackPanel/>
+        <Button
+                x:Name="ExitRep"
+                Content="EXIT"
+                Width="100"
+                Height="40"
+                FontSize="25" 
+                Background="{x:Null}" 
+                Foreground="#FFA27432" 
+                BorderBrush="White" 
+                OpacityMask="Black" 
+                FontFamily="Rockwell Condensed"
+                Grid.Row="12" 
+                
+                Click="ExitRep_Click"
+                />
+        <Button
+                x:Name="btnCalc"
+                Content="Calculation"
+                Width="100"
+                Height="40"
+                FontSize="25" 
+                Background="{x:Null}" 
+                Foreground="#FFA27432" 
+                BorderBrush="White" 
+                OpacityMask="Black" 
+                FontFamily="Rockwell Condensed"
+                Grid.Row="12" 
+                Grid.Column="1"
+                />
+        <TextBlock
+                Grid.Row="0"
+                Text="Расчет заработной платы"
+                FontSize="40"
                 TextAlignment="Center"
                 VerticalAlignment="Center"
-                Margin="10"
+                Foreground="White" 
+                Grid.ColumnSpan="2" 
                 />
-            <Button
-                x:Name="Exit" 
-                Content="Выйти"
-                FontSize="35" 
-                Height="70"
-                Width="200"
-                Margin="50"
-                VerticalAlignment="Top"
-                Click="Exit_Click"
-                />
-
-        </StackPanel>
     </Grid>
 </Window>

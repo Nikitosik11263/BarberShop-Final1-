@@ -34,5 +34,13 @@ namespace BarberShop.Windows
         {
             this.Close();
         }
+
+        private void ExitRep_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -107,6 +107,7 @@
     <Compile Include="EF\sysdiagrams.cs">
       <DependentUpon>BarbyShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs" />
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -221,6 +222,8 @@
       <DependentUpon>BarbyShop.edmx</DependentUpon>
       <LastGenOutput>BarbyShop.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\Babki.jpg" />
+    <Resource Include="Images\Money.jpg" />
     <Resource Include="Images\Wom.jpg" />
     <Resource Include="Images\9.jpg" />
     <Resource Include="Images\woman.png" />
