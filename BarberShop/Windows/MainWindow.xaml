@@ -59,20 +59,7 @@
                 FontFamily="Rockwell Condensed" 
                 TextDecorations="{x:Null}"
                 />
-            <Button
-                Grid.Column="0"
-                Grid.Row="1"
-                HorizontalAlignment="Left"
-                x:Name="Services"
-                Content="Католог услуг"
-                FontSize="40"
-                Height="100"
-                Margin="10" 
-                Click="Services_Click" 
-                BorderBrush="{x:Null}" 
-                Background="{x:Null}" 
-                Foreground="White"
-                />
+           
             <Button
                 Grid.Column="0"
                 Grid.Row="2"
@@ -91,21 +78,16 @@
                 Content="Персонал"
                 FontSize="40"
                 Height="100"
-                Margin="10" Click="Personal_Click" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"
+                Margin="10" 
+                Click="Personal_Click" 
+                BorderBrush="{x:Null}" 
+                Background="{x:Null}" 
+                Foreground="White"
                 />
+           
             <Button
                 Grid.Column="0"
                 Grid.Row="4"
-                HorizontalAlignment="Left"
-                x:Name="Stuff"
-                Content="Расходники"
-                FontSize="40"
-                Height="100"
-                Margin="10" Click="Stuff_Click" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"
-                />
-            <Button
-                Grid.Column="0"
-                Grid.Row="5"
                 HorizontalAlignment="Left"
                 x:Name="Report"
                 Content="Отчет"

@@ -24,13 +24,7 @@ namespace BarberShop.Windows
             InitializeComponent();
         }
 
-        private void Services_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            ServicesWindow servicesWindow = new ServicesWindow();
-            servicesWindow.ShowDialog();
-            this.Close();
-        }
+
 
         private void Record_Click(object sender, RoutedEventArgs e)
         {
@@ -47,14 +41,8 @@ namespace BarberShop.Windows
             personalWindow.ShowDialog();
             this.Close();
         }
-
-        private void Stuff_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            StuffWindow stuffWindow = new StuffWindow();
-            stuffWindow.ShowDialog();
-            this.Close();
-        }
+    
+     
 
         private void Report_Click(object sender, RoutedEventArgs e)
         {

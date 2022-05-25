@@ -8,7 +8,7 @@ namespace BarberShop
 {
     public static class Report
     {
-        public static double GetPay(List<double> ListZP)
+        public static double GetPay(List<double>ListZP)
         {
             return  (ListZP.Sum() * 0.3) * 0.87;
         }

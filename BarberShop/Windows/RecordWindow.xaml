@@ -42,25 +42,167 @@
             </Button.Background>
         </Button>
 
-        <DataGrid
-            x:Name="AllClient"
-            Grid.Row="1"
-            AutoGenerateColumns="False"
-            Margin="10 100 10 0"
-            KeyUp="AllClient_KeyUp"
-            >
-            <DataGrid.Background>
-                <SolidColorBrush Color="#FFF0F0F0" 
-                                 Opacity="0"/>
-            </DataGrid.Background>
+        <ListView x:Name="AllClient"
+                  Grid.Row="1"
+                  KeyUp="AllClient_KeyUp"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                  BorderBrush="#FFAA9264" 
+                  Background="#FF0F0F0F" 
+                  Foreground="Black"
+                  >
 
-            <DataGrid.Columns >
-                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding FName}" />
-                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding LName}"/>
-                <DataGridTextColumn Header="Почта" Width="*" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Телефон" Width="*" Binding="{Binding Phone}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border 
+                        
+                BorderBrush="#FFA28A60"
+                BorderThickness="2"
+                CornerRadius="10"
+                Width="800"
+                Height="100"
+                Margin="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Column="0"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="3"
+                                   Width="100"
+                                   Height="100">
+                                <Image.Source>
+                                    <Binding Path="Image">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/BarberShop;component/Images/Wom.jpg</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+
+                            <!-- 1 -->
+                            <TextBlock Text="Фамилия:"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="Имя:"
+                           Grid.Column="1"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="Почта:"
+                           Grid.Column="1"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+                            
+                            
+
+                            <!-- 2 -->
+
+                            <TextBlock Text="{Binding Path = LName}"
+                           Grid.Column="2"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="{Binding Path = FName}"
+                           Grid.Column="2"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="{Binding Path = Email}"
+                           Grid.Column="2"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <!-- 3 -->
+                            <TextBlock Text="Телефон:"
+                           Grid.Column="3"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+
+                            <TextBlock Text="Логин:"
+                           Grid.Column="3"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                          
+
+                            <!-- 4 -->
+
+
+                            <TextBlock Text="{Binding Path = Login}"
+                           Grid.Column="4"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+                            <TextBlock Text="{Binding Path = Phone}"
+                           Grid.Column="4"
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 10 0"
+                           FontSize="20"
+                           Foreground="#FFA28A60"/>
+
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button
                 Grid.Row="2"
                 x:Name="ExitServ"

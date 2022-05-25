@@ -22,7 +22,7 @@ namespace BarberShop.Windows
     /// </summary>
     public partial class RecordWindow : Window
     {
-        List<EF.Employee> listEmployee = new List<EF.Employee>();
+        List<EF.Client> listClient = new List<EF.Client>();
 
         List<string> listForSort = new List<string>()
                 {
@@ -42,39 +42,39 @@ namespace BarberShop.Windows
 
         private void Filter()
         {
-            listEmployee = ClassEntities.context.Employee.ToList();
-            listEmployee = listEmployee.
+            listClient = ClassEntities.context.Client.ToList();
+            listClient = listClient.
             Where(i => i.LName.Contains(txtSearchServ.Text)
             || i.FName.Contains(txtSearchServ.Text)
-            || i.MName.Contains(txtSearchServ.Text)).ToList();
+            || i.LName.Contains(txtSearchServ.Text)).ToList();
 
             switch (cmbSortServ.SelectedIndex)
             {
                 case 0:
-                    listEmployee = listEmployee.OrderBy(i => i.ID).ToList();
+                    listClient = listClient.OrderBy(i => i.ID).ToList();
                     break;
 
                 case 1:
-                    listEmployee = listEmployee.OrderBy(i => i.LName).ToList();
+                    listClient = listClient.OrderBy(i => i.LName).ToList();
                     break;
 
                 case 2:
-                    listEmployee = listEmployee.OrderBy(i => i.FName).ToList();
+                    listClient = listClient.OrderBy(i => i.FName).ToList();
                     break;
 
                 case 3:
-                    listEmployee = listEmployee.OrderBy(i => i.MName).ToList();
+                    listClient = listClient.OrderBy(i => i.LName).ToList();
                     break;
 
                 default:
-                    listEmployee = listEmployee.OrderBy(i => i.ID).ToList();
+                    listClient = listClient.OrderBy(i => i.ID).ToList();
                     break;
             }
-            if (listEmployee.Count == 0)
+            if (listClient.Count == 0)
             {
                 MessageBox.Show("Записей нет");
             }
-            AllClient.ItemsSource = listEmployee;
+            AllClient.ItemsSource = listClient;
 
         }
         private void Exit_Click(object sender, RoutedEventArgs e)

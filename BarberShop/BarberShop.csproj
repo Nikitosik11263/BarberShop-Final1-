@@ -126,12 +126,6 @@
     <Compile Include="Windows\ReportWindow.xaml.cs">
       <DependentUpon>ReportWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ServicesWindow.xaml.cs">
-      <DependentUpon>ServicesWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\StuffWindow.xaml.cs">
-      <DependentUpon>StuffWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="Windows\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,14 +158,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ReportWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\ServicesWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\StuffWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
