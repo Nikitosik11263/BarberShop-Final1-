@@ -14,16 +14,7 @@ namespace BarberShop.EF
     
     public partial class Specialization
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Specialization()
-        {
-            this.Employee = new HashSet<Employee>();
-        }
-    
         public int ID { get; set; }
         public string NameSpec { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employee { get; set; }
     }
 }

@@ -29,6 +29,15 @@ namespace BarberShop.Windows
         
         private string pathPhoto = null;
 
+        private BitmapImage bitmap;
+
+        public BitmapImage BitmapImage
+        {
+            get { return bitmap; }
+            set { bitmap = value; }
+        }
+
+
         public NewUserWindow1()
         {
             InitializeComponent();
@@ -134,6 +143,15 @@ namespace BarberShop.Windows
                 return;
             }
 
+            if(BitmapImage == null)
+            {
+                MessageBox.Show("Выберите фото");
+                return;
+            } else
+            {
+                //employee.Image = ImageToByteArray(BitmapImage);
+            }
+
             MessageBox.Show("Пользователь добавлен");
             context.Employee.Add(employee);
             try
@@ -212,11 +230,19 @@ namespace BarberShop.Windows
             OpenFileDialog openFile = new OpenFileDialog();
             if (openFile.ShowDialog() == true)
             {
-                photoUser.Source = new BitmapImage(new Uri(openFile.FileName));
+                BitmapImage = new BitmapImage(new Uri(openFile.FileName));
+                photoUser.Source = BitmapImage;
                 pathPhoto = openFile.FileName;
             }
-
-            ClassEntities.context.SaveChanges();
         }
+
+        //public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        //{
+        //    using (var ms = new MemoryStream())
+        //    {
+        //        imageIn.Save(ms, imageIn.RawFormat);
+        //        return ms.ToArray();
+        //    }
+        //}
     }
 }
